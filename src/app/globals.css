@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a0f3f 50%, #0a0e27 100%);
+  color: #ffffff;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&family=Dancing+Script:wght@400;700&display=swap');
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 217, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 217, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 217, 255, 0.6);
+}
+
+/* Text Gradient */
+.text-gradient {
+  background: linear-gradient(90deg, #00d9ff, #9d4edd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(90deg, #ffd60a, #00d9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow Effects */
+.glow-cyan {
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
+}
+
+.glow-cyan-hover:hover {
+  box-shadow: 0 0 50px rgba(0, 217, 255, 0.5);
+}
+
+.glow-pink {
+  box-shadow: 0 0 30px rgba(255, 0, 110, 0.3);
+}
+
+.glow-pink-hover:hover {
+  box-shadow: 0 0 50px rgba(255, 0, 110, 0.5);
+}
+
+/* Backdrop Blur */
+.backdrop-blur-custom {
+  backdrop-filter: blur(10px);
+}
