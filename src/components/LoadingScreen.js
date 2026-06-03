@@ -36,7 +36,7 @@ export default function LoadingScreen({ onUnlock }) {
         </div>
 
         <div className="text-lg text-gray-400 mb-8">
-          To unlock this world… choose Sonali&apos;s birthday month.
+          To unlock this world… choose Ekta&apos;s birthday month.
         </div>
 
         <div className="grid grid-cols-3 md:grid-cols-4 gap-3 w-full mb-4">

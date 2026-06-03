@@ -6,30 +6,37 @@ export default function LetterScreen({ onContinue }) {
       <div className="flex-1 flex items-center justify-center">
         <div className="bg-gradient-to-br from-purple/10 to-cyan/5 border-2 border-cyan/20 rounded-3xl p-12 md:p-16 max-w-2xl w-full backdrop-blur-custom animate-slideUp">
           <h2 className="font-serif text-4xl md:text-5xl text-cyan text-center mb-8 font-bold">
-            A small note from me…
+            Happy Birthday Sonu Somani! 🎉❤️
           </h2>
 
-          <div className="font-serif text-lg md:text-xl leading-relaxed text-purple/80 space-y-4">
-            <p>Dear Sonali,</p>
-
+          <div className="font-serif text-lg md:text-xl leading-relaxed text-purple/80 space-y-4 text-left">
             <p>
-              25 years of existence and you&apos;re still the most chaotic yet incredible human I know. You light up rooms, you inspire people, you make everyone around you feel special.
+              It&apos;s hard to believe that we&apos;ve been together since our school days and are still standing by each other&apos;s side today. From sharing classrooms, silly secrets, endless laughter, and countless memories, we&apos;ve grown up together, and I couldn&apos;t be more grateful for our friendship.
             </p>
 
             <p>
-              From late-night coding sessions to your adorable sarcasm, from being brilliant to being hilarious – you&apos;re a perfect blend of talent, beauty, and weirdness.
+              Today, as we celebrate you, I want you to know how incredibly proud we are of the person you&apos;ve become. Your journey has been inspiring to watch. A special congratulations to CS Sonali Somani! 🏆✨ Your hard work, dedication, sacrifices, and those countless restless nights have finally paid off. This achievement is a testament to your determination and perseverance, and you truly deserve every bit of success that comes your way. We are beyond proud of you and all that you have accomplished.
             </p>
 
             <p>
-              Thank you for being you. Thank you for making life colorful.
+              Thank you for being such a wonderful friend, for always being there, and for making life brighter with your presence. May this year bring you happiness, success, good health, and everything you&apos;ve been wishing for.
             </p>
 
             <p>
-              Happy 25th! 💙
+              And lastly, here&apos;s hoping you get permission for all our upcoming trips! 😄✈️ We have so many places to explore, stories to create, and memories to make together. After all these years of friendship, it&apos;s only fair that we add some unforgettable travel adventures to our collection of memories.
+            </p>
+
+            <p>
+              Happy Birthday once again, Sonali! ❤️🥳
+            </p>
+
+            <p>
+              May your smile never fade, your dreams keep growing, and your success continue to inspire everyone around you.
             </p>
 
             <p className="text-right font-bold text-lg pt-4">
-              With love ✨
+              With lots of love,<br />
+              Your forever friend ❤️
             </p>
           </div>
         </div>

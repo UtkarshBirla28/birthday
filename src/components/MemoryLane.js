@@ -5,6 +5,9 @@ import { IMAGE_PATHS, PLACEHOLDER_IMAGES } from '@/utils/imageConfig';
 
 export default function MemoryLane({ onContinue }) {
   const [imageErrors, setImageErrors] = useState({});
+  const [revealed, setRevealed] = useState({});
+
+  const reveal = (key) => setRevealed(prev => ({ ...prev, [key]: true }));
 
   const getImageUrl = (index, source = 'memory') => {
     const key = `${source}-${index}`;
@@ -51,31 +54,63 @@ export default function MemoryLane({ onContinue }) {
 
       {/* HE Version Section */}
       <div className="bg-gradient-to-br from-cyan/5 to-purple/5 border-2 border-dashed border-cyan/20 rounded-3xl p-8 text-center mb-12 max-w-2xl mx-auto w-full">
-        <h2 className="text-2xl font-bold bg-gradient-to-r from-pink to-cyan bg-clip-text text-transparent mb-6">
+        <h2 className="text-2xl font-bold bg-gradient-to-r from-pink to-cyan bg-clip-text text-transparent mb-2">
           🔓 Unlock the HE Version of Sonali
         </h2>
-        <div className="max-w-sm mx-auto rounded-xl overflow-hidden border-2 border-cyan/30">
+        <p className="text-sm text-purple/60 italic mb-6">
+          Go on, have a look… we know you&apos;re curious 👀
+        </p>
+        <div
+          onClick={() => reveal('he')}
+          className="relative max-w-sm mx-auto rounded-xl overflow-hidden border-2 border-cyan/30 cursor-pointer select-none"
+        >
           <img
             src={getImageUrl(0, 'he')}
             alt="HE Version"
             onError={() => handleImageError('he-0')}
-            className="w-full h-64 object-cover"
+            className={`w-full h-64 object-cover transition-all duration-700 ${
+              revealed.he ? 'blur-0 scale-100' : 'blur-xl scale-110'
+            }`}
           />
+          <div
+            className={`absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-cyan/40 to-purple/50 backdrop-blur-md transition-all duration-700 ${
+              revealed.he ? 'opacity-0 scale-125 pointer-events-none' : 'opacity-100'
+            }`}
+          >
+            <div className="text-5xl mb-2 animate-bounce">🎁</div>
+            <div className="text-white font-bold uppercase tracking-widest text-sm">Tap to reveal</div>
+          </div>
         </div>
       </div>
 
       {/* Weirdest Version Section */}
       <div className="bg-gradient-to-br from-cyan/5 to-purple/5 border-2 border-dashed border-cyan/20 rounded-3xl p-8 text-center mb-12 max-w-2xl mx-auto w-full">
-        <h2 className="text-2xl font-bold bg-gradient-to-r from-pink to-cyan bg-clip-text text-transparent mb-6">
+        <h2 className="text-2xl font-bold bg-gradient-to-r from-pink to-cyan bg-clip-text text-transparent mb-2">
           😂 Unlock the Weirdest Version
         </h2>
-        <div className="max-w-sm mx-auto rounded-xl overflow-hidden border-2 border-cyan/30">
+        <p className="text-sm text-purple/60 italic mb-6">
+          Brace yourself… this one&apos;s pure chaos. Have a look 🙈
+        </p>
+        <div
+          onClick={() => reveal('weird')}
+          className="relative max-w-sm mx-auto rounded-xl overflow-hidden border-2 border-cyan/30 cursor-pointer select-none"
+        >
           <img
             src={getImageUrl(0, 'weird')}
             alt="Weirdest Version"
             onError={() => handleImageError('weird-0')}
-            className="w-full h-64 object-cover object-[center_25%]"
+            className={`w-full h-64 object-cover object-[center_25%] transition-all duration-700 ${
+              revealed.weird ? 'blur-0 scale-100' : 'blur-xl scale-110'
+            }`}
           />
+          <div
+            className={`absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-pink/40 to-purple/50 backdrop-blur-md transition-all duration-700 ${
+              revealed.weird ? 'opacity-0 scale-125 pointer-events-none' : 'opacity-100'
+            }`}
+          >
+            <div className="text-5xl mb-2 animate-bounce">🙈</div>
+            <div className="text-white font-bold uppercase tracking-widest text-sm">Tap to reveal</div>
+          </div>
         </div>
       </div>
 

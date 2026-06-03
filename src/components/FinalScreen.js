@@ -17,9 +17,20 @@ export default function FinalScreen({ onRestart }) {
           🎂 HAPPY BIRTHDAY SONALI 🎂✨
         </h1>
 
-        <p className="text-2xl md:text-3xl font-semibold text-purple/70 max-w-xl mx-auto mb-12 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
+        <p className="text-2xl md:text-3xl font-semibold text-purple/70 max-w-xl mx-auto mb-8 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
           Thank you for existing in this chaotic world 💙
         </p>
+
+        <div
+          className="mx-auto mb-12 w-full max-w-xs sm:max-w-sm rounded-3xl overflow-hidden border-4 border-pink/40 shadow-2xl shadow-pink/30 animate-slideUp"
+          style={{ animationDelay: '0.45s' }}
+        >
+          <img
+            src="/images/card-image.jpeg"
+            alt="Sonali with her friend"
+            className="w-full h-auto object-cover block"
+          />
+        </div>
 
         <button
           onClick={onRestart}
