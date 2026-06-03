@@ -31,11 +31,11 @@ export default function LoadingScreen({ onUnlock }) {
           Entering the Sonali World…
         </div>
 
-        <div className="text-3xl font-bold text-pink mb-8 animate-pulse drop-shadow-lg">
+        <div className="text-3xl font-bold text-gradient-gold mb-8 animate-pulse">
           Access Restricted
         </div>
 
-        <div className="text-lg text-gray-400 mb-8">
+        <div className="text-lg text-purple/70 mb-8">
           To unlock this world… choose Ekta&apos;s birthday month.
         </div>
 

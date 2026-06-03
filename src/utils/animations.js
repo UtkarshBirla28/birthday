@@ -1,7 +1,10 @@
+// Festive palette tuned to the soft-blue theme: navy, ocean, steel, gold, coral, rose, white
+export const FESTIVE_COLORS = ['#1B4769', '#2F6B96', '#5B9BC9', '#E8B84B', '#F4A259', '#E27D9E', '#FFFFFF'];
+
 export const createConfetti = () => {
-  const confettiPieces = 50;
-  const colors = ['#00d9ff', '#9d4edd', '#ff006e', '#ffd60a'];
-  
+  const confettiPieces = 60;
+  const colors = FESTIVE_COLORS;
+
   for (let i = 0; i < confettiPieces; i++) {
     const confetti = document.createElement('div');
     confetti.className = 'fixed pointer-events-none z-20';
@@ -109,7 +112,7 @@ export const createCrackerExplosion = () => {
 
 const createCrackerBurst = (x, y) => {
   const particleCount = 30;
-  const colors = ['#00d9ff', '#9d4edd', '#ff006e', '#ffd60a', '#00ff00', '#ff3333'];
+  const colors = FESTIVE_COLORS;
 
   for (let i = 0; i < particleCount; i++) {
     const cracker = document.createElement('div');
@@ -168,4 +171,73 @@ const createCrackerBurst = (x, y) => {
 
     setTimeout(() => spark.remove(), 2000);
   }
+};
+
+/* Localized celebration when something is revealed — a burst at (x, y)
+   plus a quick puff of confetti rising from the same spot. */
+export const createConfettiBurst = (x, y) => {
+  createCrackerBurst(x, y);
+
+  const pieces = 24;
+  for (let i = 0; i < pieces; i++) {
+    const confetti = document.createElement('div');
+    confetti.className = 'fixed pointer-events-none z-30';
+    confetti.style.left = x + 'px';
+    confetti.style.top = y + 'px';
+
+    const piece = document.createElement('div');
+    const color = FESTIVE_COLORS[Math.floor(Math.random() * FESTIVE_COLORS.length)];
+    const size = 6 + Math.random() * 6;
+    piece.style.width = size + 'px';
+    piece.style.height = size + 'px';
+    piece.style.backgroundColor = color;
+    piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    piece.style.position = 'absolute';
+
+    const angle = (Math.random() * Math.PI) - Math.PI; // upward fan
+    const dist = 80 + Math.random() * 160;
+    const tx = Math.cos(angle) * dist;
+    const ty = Math.sin(angle) * dist - 40; // bias upward
+
+    piece.style.animation = `crackerExplode ${1 + Math.random()}s ease-out forwards`;
+    piece.style.setProperty('--cracker-x', tx + 'px');
+    piece.style.setProperty('--cracker-y', ty + 'px');
+
+    confetti.appendChild(piece);
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(), 2000);
+  }
+};
+
+/* Gently rising balloons & party emojis. Returns a cleanup fn. */
+export const createBalloons = () => {
+  const emojis = ['🎈', '🎉', '💙', '✨', '🎊', '🥳'];
+  const interval = setInterval(() => {
+    const el = document.createElement('div');
+    el.className = 'fixed pointer-events-none z-20';
+    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    el.style.fontSize = 28 + Math.random() * 28 + 'px';
+    el.style.left = Math.random() * window.innerWidth + 'px';
+    el.style.top = window.innerHeight + 20 + 'px';
+    el.style.setProperty('--sway', (Math.random() - 0.5) * 120 + 'px');
+
+    const duration = 7 + Math.random() * 5;
+    el.style.animation = `balloonRise ${duration}s ease-in forwards`;
+
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), duration * 1000);
+  }, 900);
+
+  return () => clearInterval(interval);
+};
+
+/* Recurring cracker show for the finale. Returns a cleanup fn. */
+export const startCrackerShow = () => {
+  const interval = setInterval(() => {
+    const x = window.innerWidth * (0.15 + Math.random() * 0.7);
+    const y = window.innerHeight * (0.1 + Math.random() * 0.35);
+    createCrackerBurst(x, y);
+  }, 2600);
+
+  return () => clearInterval(interval);
 };

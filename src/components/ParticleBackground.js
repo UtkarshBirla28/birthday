@@ -17,10 +17,11 @@ export default function ParticleBackground() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.size = Math.random() * 2 + 1;
-        this.speedX = (Math.random() - 0.5) * 0.5;
-        this.speedY = (Math.random() - 0.5) * 0.5;
-        this.color = Math.random() > 0.5 ? 'rgba(0, 217, 255, ' : 'rgba(157, 78, 221, ';
-        this.opacity = Math.random() * 0.5 + 0.3;
+        this.speedX = (Math.random() - 0.5) * 0.35;
+        this.speedY = (Math.random() - 0.5) * 0.35;
+        // Gentle navy / ocean dust on the light backdrop
+        this.color = Math.random() > 0.5 ? 'rgba(27, 71, 105, ' : 'rgba(47, 107, 150, ';
+        this.opacity = Math.random() * 0.18 + 0.06;
       }
 
       update() {
@@ -35,12 +36,14 @@ export default function ParticleBackground() {
 
       draw() {
         ctx.fillStyle = this.color + this.opacity + ')';
-        ctx.fillRect(this.x, this.y, this.size, this.size);
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
       }
     }
 
     const particles = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 65; i++) {
       particles.push(new Particle());
     }
 

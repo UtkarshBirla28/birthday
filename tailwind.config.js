@@ -8,12 +8,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        cyan: '#00d9ff',
-        purple: '#9d4edd',
-        pink: '#ff006e',
-        gold: '#ffd60a',
-        darkBg: '#0a0e27',
-        darkBg2: '#1a0f3f',
+        // Aesthetic light-blue theme.
+        // Token names kept for compatibility; values remapped to an elegant blue palette.
+        cyan: '#1B4769',    // deep navy — headings, primary accent, borders
+        purple: '#2F6B96',  // ocean blue — body text & gradients (readable on light bg)
+        pink: '#3D7EA6',    // soft steel blue — secondary accent
+        gold: '#B8860B',    // rich antique gold — warm celebratory accent
+        darkBg: '#CADBE7',  // page background (soft powder blue)
+        darkBg2: '#E3EEF5', // lighter background tint
       },
       animation: {
         float: 'float 3s ease-in-out infinite',

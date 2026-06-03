@@ -44,7 +44,7 @@ export default function WelcomeScreen({ onContinue }) {
             >
               <div className="text-3xl md:text-5xl mb-2 md:mb-3">{attr.emoji}</div>
               <div className="text-lg md:text-2xl font-bold text-gradient mb-1 md:mb-2">{attr.title}</div>
-              <div className="text-[10px] md:text-xs text-gray-400 italic">{attr.subtitle}</div>
+              <div className="text-[10px] md:text-xs text-cyan/60 italic">{attr.subtitle}</div>
             </div>
           ))}
 
@@ -57,14 +57,14 @@ export default function WelcomeScreen({ onContinue }) {
           >
             <div className="text-3xl md:text-5xl mb-2 md:mb-3">🔐</div>
             <div className="text-lg md:text-2xl font-bold text-gradient-gold mb-1 md:mb-2">Secret Compliment</div>
-            <div className="text-[10px] md:text-xs text-gray-400 italic">Bribe with fancy parties 😌</div>
+            <div className="text-[10px] md:text-xs text-cyan/60 italic">Bribe with fancy parties 😌</div>
           </div>
         </div>
       </div>
 
       <button
         onClick={onContinue}
-        className="mt-4 md:mt-8 px-10 py-4 bg-gradient-to-r from-cyan to-purple text-black font-bold text-lg rounded-xl uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan/50 active:-translate-y-0.5"
+        className="mt-4 md:mt-8 px-10 py-4 bg-gradient-to-r from-cyan to-purple text-white font-bold text-lg rounded-xl uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan/40 active:-translate-y-0.5"
       >
         Continue to Memory Lane
       </button>

@@ -44,7 +44,7 @@ export default function LetterScreen({ onContinue }) {
 
       <button
         onClick={onContinue}
-        className="mt-8 px-8 py-4 bg-gradient-to-r from-cyan to-purple text-black font-bold rounded-xl uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan/50 active:-translate-y-0.5"
+        className="mt-8 px-8 py-4 bg-gradient-to-r from-cyan to-purple text-white font-bold rounded-xl uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan/40 active:-translate-y-0.5"
       >
         To the Grand Finale ➜
       </button>

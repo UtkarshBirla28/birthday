@@ -2,12 +2,22 @@
 
 import { useState } from 'react';
 import { IMAGE_PATHS, PLACEHOLDER_IMAGES } from '@/utils/imageConfig';
+import { createConfettiBurst } from '@/utils/animations';
 
 export default function MemoryLane({ onContinue }) {
   const [imageErrors, setImageErrors] = useState({});
   const [revealed, setRevealed] = useState({});
 
-  const reveal = (key) => setRevealed(prev => ({ ...prev, [key]: true }));
+  const reveal = (key, e) => {
+    if (revealed[key]) return;
+    setRevealed(prev => ({ ...prev, [key]: true }));
+
+    // Burst of crackers + confetti from the centre of the tapped image
+    const rect = e?.currentTarget?.getBoundingClientRect();
+    const x = rect ? rect.left + rect.width / 2 : window.innerWidth / 2;
+    const y = rect ? rect.top + rect.height / 2 : window.innerHeight / 2;
+    createConfettiBurst(x, y);
+  };
 
   const getImageUrl = (index, source = 'memory') => {
     const key = `${source}-${index}`;
@@ -61,7 +71,7 @@ export default function MemoryLane({ onContinue }) {
           Go on, have a look… we know you&apos;re curious 👀
         </p>
         <div
-          onClick={() => reveal('he')}
+          onClick={(e) => reveal('he', e)}
           className="relative max-w-sm mx-auto rounded-xl overflow-hidden border-2 border-cyan/30 cursor-pointer select-none"
         >
           <img
@@ -92,7 +102,7 @@ export default function MemoryLane({ onContinue }) {
           Brace yourself… this one&apos;s pure chaos. Have a look 🙈
         </p>
         <div
-          onClick={() => reveal('weird')}
+          onClick={(e) => reveal('weird', e)}
           className="relative max-w-sm mx-auto rounded-xl overflow-hidden border-2 border-cyan/30 cursor-pointer select-none"
         >
           <img
@@ -116,7 +126,7 @@ export default function MemoryLane({ onContinue }) {
 
       <button
         onClick={onContinue}
-        className="mx-auto px-8 py-4 bg-gradient-to-r from-cyan to-purple text-black font-bold rounded-xl uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan/50 active:-translate-y-0.5"
+        className="mx-auto px-8 py-4 bg-gradient-to-r from-cyan to-purple text-white font-bold rounded-xl uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan/40 active:-translate-y-0.5"
       >
         Next ➜
       </button>

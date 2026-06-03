@@ -32,7 +32,7 @@ export default function AchievementScreen({ onContinue }) {
             BIGGEST ACHIEVEMENT UNLOCKED
           </h1>
           
-          <p className="text-center text-gray-300 italic mb-8">
+          <p className="text-center text-purple/70 italic mb-8">
             CS Sonali Somani
           </p>
 
@@ -58,7 +58,7 @@ export default function AchievementScreen({ onContinue }) {
 
       <button
         onClick={onContinue}
-        className="px-8 py-4 bg-gradient-to-r from-cyan to-purple text-black font-bold rounded-xl uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan/50 active:-translate-y-0.5"
+        className="px-8 py-4 bg-gradient-to-r from-cyan to-purple text-white font-bold rounded-xl uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan/40 active:-translate-y-0.5"
       >
         Next ➜
       </button>
