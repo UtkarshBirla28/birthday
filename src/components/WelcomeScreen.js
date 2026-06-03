@@ -26,7 +26,7 @@ export default function WelcomeScreen({ onContinue }) {
       </div>
 
       <div className="text-2xl md:text-3xl font-light text-purple/70 mb-12">
-        Welcome to Sonali's 25th Birthday
+        Welcome to Sonali&apos;s 25th Birthday
       </div>
 
       <div className="mb-8">

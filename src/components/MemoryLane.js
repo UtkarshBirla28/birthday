@@ -28,7 +28,7 @@ export default function MemoryLane({ onContinue }) {
   return (
     <div className="fixed inset-0 flex flex-col p-8 overflow-y-auto z-10">
       <h1 className="text-4xl md:text-5xl font-bold text-gradient mb-12 text-center">
-        Let's go to the memory lane…
+        Let&apos;s go to the memory lane…
       </h1>
 
       {/* Memory Lane Cards - 6 Images */}

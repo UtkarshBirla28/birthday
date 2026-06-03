@@ -13,11 +13,11 @@ export default function LetterScreen({ onContinue }) {
             <p>Dear Sonali,</p>
 
             <p>
-              25 years of existence and you're still the most chaotic yet incredible human I know. You light up rooms, you inspire people, you make everyone around you feel special.
+              25 years of existence and you&apos;re still the most chaotic yet incredible human I know. You light up rooms, you inspire people, you make everyone around you feel special.
             </p>
 
             <p>
-              From late-night coding sessions to your adorable sarcasm, from being brilliant to being hilarious – you're a perfect blend of talent, beauty, and weirdness.
+              From late-night coding sessions to your adorable sarcasm, from being brilliant to being hilarious – you&apos;re a perfect blend of talent, beauty, and weirdness.
             </p>
 
             <p>
